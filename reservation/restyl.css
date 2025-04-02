@@ -1,0 +1,402 @@
+/* Importing the 'Nunito' font from Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Defining the root variable for the orange color used throughout */
+
+ :root {
+    --orange: #ffa500;
+}
+
+
+/* General reset for all elements: setting the font family, removing margins, padding, and box sizing */
+
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+
+/* Highlight text selection with orange background and white text */
+
+ ::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+
+/* Base HTML styling: set font size, prevent horizontal overflow, smooth scrolling, and scroll padding */
+
+html {
+    font-size: 62.5%;
+    /* Sets the base font size to 62.5%, making 1rem equal to 10px for easier scaling */
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling if content overflows */
+    scroll-padding-top: 8rem;
+    /*6rem*/
+    /* Adds padding to the top when scrolling (useful for fixed headers) */
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling when clicking anchor links */
+}
+
+section {
+    padding: 2rem 9%;
+    /* Adds padding of 2rem vertically and 9% horizontally to all sections */
+}
+
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.heading span {
+    font-size: 3.5rem;
+    background: rgba(255, 165, 0, 0.3);
+    /* Light orange background (more transparent) */
+    color: var(--orange);
+    border-radius: 0.2rem;
+    /* Less rounding to match the square effect */
+    padding: 0.5rem 1rem;
+    /* Adjust padding for a more blocky appearance */
+    margin: 0.3rem;
+    /* Add margin between letters */
+    display: inline-block;
+    /* Display letters as inline blocks */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for depth */
+    transition: 0.3s ease-in-out;
+    /* Smoother transition */
+}
+
+.heading span:hover {
+    color: #fff;
+    /* Change text color on hover */
+    background-color: var(--orange);
+    /* Fully orange background on hover */
+    border-radius: 0.5rem;
+    /* Keep border radius subtle on hover */
+}
+
+.heading span.space {
+    background: none;
+    /* No background for spaces */
+    margin: 0;
+    /* Remove margin for spaces */
+}
+
+
+/* Styling for button elements: background color, padding, border, and hover effects */
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--orange);
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: rgba(255, 165, 0, .2);
+    color: var(--orange);
+}
+
+
+/* Header styling: fixed at the top with dark background and spaced layout */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+
+/* Logo styling: bold text with an orange highlight */
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+
+/* Centering the navigation bar */
+
+header .navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* Space between the links */
+}
+
+
+/* Navbar links: white text with hover effect to change to orange */
+
+header .navbar a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 .8rem;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+
+/* Logo styling: bold text with an orange highlight */
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: auto;
+    /* Ensures the logo stays to the left */
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+section.reservation {
+    margin-top: 50px;
+    /* Adjust this value to move the section further down */
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+
+/* General styling for the reservation table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: var(--table-bg);
+    border: 1px solid #ddd;
+    font-size: 1.6rem;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+table th,
+table td {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-color);
+    font-weight: bold;
+}
+
+table td {
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table td.actions {
+    text-align: center;
+}
+
+table td.actions a {
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    margin: 0 5px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.edit-btn {
+    background-color: #f0ad4e;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #ec971f;
+}
+
+.delete-btn {
+    background-color: var(--error-color);
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+
+/* Button styling */
+
+button {
+    padding: 1rem 2rem;
+    background-color: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+
+/* Form Styling */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--table-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="date"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: var(--orange);
+    outline: none;
+}
+
+form select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+form input[type="number"] {
+    appearance: none;
+}
+
+form input[type="number"]::-webkit-outer-spin-button,
+form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Button Styling */
+
+form button {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    background-color: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+
+/* Form Section Heading */
+
+form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+
+/* Footer */
+
+.footer {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer .credit {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+
+/* Highlight text selection */
+
+::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+
+/* Heading styling */
+
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.heading span {
+    color: var(--orange);
+    font-size: 4rem;
+}

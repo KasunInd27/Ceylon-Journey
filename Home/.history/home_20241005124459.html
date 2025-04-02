@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN link for using icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/home.css">
+    <script src="JS/home.js"></script>
+    <style>.imgSlide {display:none;}</style>
+    <title>Home Page</title>
+</head>
+<body>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>adventure is worthwhile</h3>
+            <p>discover new places with us,adventure awaits</p>
+            <a href="#" class="btn">discover more</a>
+        </div>
+        
+        <div class="image-slide" style="max-width:500px">
+            <img class="imgSlide" src="../image/train.jpg" style="width:100%">
+            <img class="imgSlide" src="../image/elephants.jpg" style="width:100%">
+            <img class="imgSlide" src="../image/boats.jpg" style="width:100%">
+            <img class="imgSlide" src="../image/fish.jpg" style="width:100%">
+            <img class="imgSlide" src="../image/arc.jpg" style="width:100%">
+            
+        </div>
+
+      
+    </section>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+</head>
+
+<body>
+
+<h2 class="w3-center">Automatic Slideshow</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+    <img class="imgSlide" src="../image/train.jpg" style="width:100%">
+    <img class="imgSlide" src="../image/elephants.jpg" style="width:100%">
+    <img class="imgSlide" src="../image/boats.jpg" style="width:100%">
+    <img class="imgSlide" src="../image/fish.jpg" style="width:100%">
+    <img class="imgSlide" src="../image/arc.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

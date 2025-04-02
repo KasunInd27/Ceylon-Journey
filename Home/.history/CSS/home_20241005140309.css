@@ -1,0 +1,78 @@
+.home.controls {
+    padding: 1rem;
+    border-radius: 5rem;       
+    background: rgba(255, 1, 1, 0.7);
+    position: relative;
+    top: 10rem;
+    
+}
+
+.home .controls .img-btn {
+
+    height: 2rem;         
+    width: 2rem;         
+    display: inline-block;        
+    border-radius: 50%;         
+    background: #fff;         
+    cursor: pointer;
+    margin: 0 .5rem;
+    
+}
+.home .controls .img-btn.active {
+    background: var(--orange);
+}
+#home {
+    min-height: 100vh;
+    /* Ensures it takes up the full viewport height */
+    display: flex;
+    /* Enables flexbox layout */
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: center;
+    /* Horizontally centers content */
+    flex-flow: column;
+    /* Aligns children in a column layout */
+    position: relative;
+    /* Allows child elements to use absolute positioning */
+    z-index: 0;
+    /* Ensures this section has the correct stacking order */
+}
+.home .content {
+    text-align: center;
+    /* Centers the text within the .content container */
+}
+/* Styles for h3 elements inside the .content class within the .home section */
+
+.home .content h3 {
+    font-size: 4.5rem;
+    /* Sets a large font size for the heading */
+    color: #060101;
+    /* White text color */
+    text-transform: uppercase;
+    /* Makes the text uppercase */
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+    /* Adds a soft shadow to the text */  
+}
+
+.home .content p {
+    font-size: 2.5rem;
+    /* Sets the font size for paragraphs inside the .content class in the .home section */
+    color: #04ff9f;
+    /* Sets the text color to white */
+    padding: 0.5rem 0;
+    /* Adds vertical padding (top and bottom) of 0.5rem */
+    opacity: 0.80;
+}
+
+.slide
+{
+    margin-top: -590px;
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    position:absolute;
+    width: 100%;
+    height: 10%;
+    opacity: 0.90;
+    z-index: -5;
+}

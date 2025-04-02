@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN link for using icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/home.css">
+    <script src="JS/home.js"></script>
+    <style>
+        .mySlides {display:none;}
+    </style>
+    <title>Home Page</title>
+</head>
+<body>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>adventure is worthwhile</h3>
+            <p>Discover new places with us</p>
+        </div>
+        
+        <div class="slide">
+            <img class="homeSlides" src="../image/train.jpg" style="width:100%">
+            <img class="homeSlides" src="../image/boat.jpg" style="width:100%">
+            <img class="homeSlides" src="../image/fish.jpg" style="width:100%">
+        </div> 
+    </section>
+
+    <section class="welcome">
+        <h2>Welcome to Ceylon Journey!</h2>
+        <p>Your gateway to exploring the wonders of Sri Lanka!</p>
+        <p>Whether you're seeking the perfect hotel, booking a scenic ride, or planning a guided tour, we've got you covered.</p>
+        <p>Start your journey with us and experience the beauty and adventure of the island, all in one place.</p>
+    </section>
+
+    <div class="details">
+        <div class="product">
+            <h3>T-shirt</h3>
+            <a href="./products-page.php"><img src="./Images/products/t-shirt-1.jpg" alt="product t-shirt"></a>
+            <a href="./products-page.php"><p>This t-shirt is the latest one designed by Garment Zee</p></a>
+        </div>
+
+        <div class="product">
+            <h3>T-shirt</h3>
+            <a href="./products-page.php"><img src="./Images/products/t-shirt-2.jpg" alt="product t-shirt"></a>
+            <a href="./products-page.php"><p>This t-shirt is the latest one designed by Garment Zee</p></a>
+        </div>
+
+        <div class="product">
+            <h3>T-shirt</h3>
+            <a href="./products-page.php"><img src="./Images/products/t-shirt-3.jpg" alt="product t-shirt"></a>
+            <a href="./products-page.php"><p>This t-shirt is the latest one designed by Garment Zee</p></a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("homeSlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 4000); // Change image every 2 seconds
+        }
+        </script>
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+.home.controls {
+    padding: 1rem;
+    border-radius: 5rem;       
+    background: rgba(0, 0, 0, .7);
+    position: relative;
+    top: 10rem;
+    
+}
+
+.home .controls .img-btn {
+
+    height: 2rem;         
+    width: 2rem;         
+    display: inline-block;        
+    border-radius: 50%;         
+    background: #fff;         
+    cursor: pointer;
+    margin: 0 .5rem;
+    
+}
+.home .controls .img-btn.active {
+    background: var(--orange);
+    
+}
+#home {
+    min-height: 100vh;
+    /* Ensures it takes up the full viewport height */
+    display: flex;
+    /* Enables flexbox layout */
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: center;
+    /* Horizontally centers content */
+    flex-flow: column;
+    /* Aligns children in a column layout */
+    position: relative;
+    /* Allows child elements to use absolute positioning */
+    z-index: 0;
+    /* Ensures this section has the correct stacking order */
+}

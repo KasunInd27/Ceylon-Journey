@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+footer {
+    background-color: black;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    font-size: 2rem; 
+    position: relative;
+    margin-bottom: 0px; 
+}
+
+.footer-content {
+    margin-bottom: 20px; 
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px; 
+    font-size: 2rem; 
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0;
+    font-size: 2rem; 
+}
+
+body::after {
+    content: "";
+    display: none;
+    
+}
+
+
+        
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    
+    html {
+        font-size: 50%;
+    }
+    
+    .heading span {
+        font-size: 2.5rem;
+        
+    }
+    .contact .row from .inputBox input {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,1039 @@
+      /* Importing the 'Nunito' font from Google Fonts */
+        
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+      /* Defining the root variable for the orange color used throughout */
+      
+       :root {
+          --orange: #ffa500;
+      }
+      /* General reset for all elements: setting the font family, removing margins, padding, and box sizing */
+      
+      * {
+          font-family: "Nunito", sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          outline: none;
+          border: none;
+          text-decoration: none;
+          transition: all .2s linear;
+      }
+      /* Highlight text selection with orange background and white text */
+      
+       ::selection {
+          background: var(--orange);
+          color: #fff;
+      }
+      /* Base HTML styling: set font size, prevent horizontal overflow, smooth scrolling, and scroll padding */
+      
+      html {
+          font-size: 62.5%;
+          /* Sets the base font size to 62.5%, making 1rem equal to 10px for easier scaling */
+          overflow-x: hidden;
+          /* Prevents horizontal scrolling if content overflows */
+          scroll-padding-top: 6rem;
+          /* Adds padding to the top when scrolling (useful for fixed headers) */
+          scroll-behavior: smooth;
+          /* Enables smooth scrolling when clicking anchor links */
+      }
+      
+      section {
+          padding: 2rem 9%;
+          /* Adds padding of 2rem vertically and 9% horizontally to all sections */
+      }
+      
+      .heading {
+          text-align: center;
+          /* Centers the text within the heading */
+          padding: 2.5rem 0;
+          /* Adds vertical padding to space the heading from surrounding content */
+      }
+      
+      .heading span {
+          font-size: 3.5rem;
+          /* Sets the font size for text within span tags inside headings */
+          background: rgba(255, 165, 0, .2);
+          /* Adds a semi-transparent orange background */
+          color: var(--orange);
+          /* Sets the text color to orange (defined as --orange in your :root variables) */
+          border-radius: .5rem;
+          /* Rounds the corners of the background by 0.5rem */
+          padding: .2rem 1rem;
+          /* Adds 0.2rem vertical and 1rem horizontal padding to the span */
+      }
+      
+      .heading span.space {
+          background: none;
+          /* Removes the background for spans with the "space" class */
+      }
+      /* Styling for button elements: background color, padding, border, and hover effects */
+      
+      .btn {
+          display: inline-block;
+          margin-top: 1rem;
+          background-color: var(--orange);
+          color: #fff;
+          padding: .8rem 3rem;
+          border: .2rem solid var(--orange);
+          cursor: pointer;
+          font-size: 1.7rem;
+      }
+      
+      .btn:hover {
+          background: rgba(255, 165, 0, .2);
+          color: var(--orange);
+      }
+      /* Header styling: fixed at the top with dark background and spaced layout */
+      
+      header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: #333;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2rem 9%;
+      }
+      /* Logo styling: bold text with an orange highlight */
+      
+      header .logo {
+          font-size: 2.5rem;
+          font-weight: bolder;
+          color: #fff;
+          text-transform: uppercase;
+      }
+      
+      header .logo span {
+          color: var(--orange);
+      }
+      /* Navbar links: white text with hover effect to change to orange */
+      
+      header .navbar a {
+          color: #fff;
+          font-size: 2rem;
+          margin: 0 .8rem;
+      }
+      
+      header .navbar a:hover {
+          color: var(--orange);
+      }
+      /* Icons (search, login) styling: white with hover effect */
+      
+      header .icons i {
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          margin-right: 2rem;
+      }
+      
+      header .icons i:hover {
+          color: var(--orange);
+      }
+      /* Search bar container: hidden initially with animation for appearance */
+      
+      header .search-bar-container {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          padding: 1.5rem 2rem;
+          background: #333;
+          border-top: .1rem solid rgba(255, 255, 255, .2);
+          display: flex;
+          align-items: center;
+          z-index: 1001;
+          clip-path: polygon(0 0, 100% 0, 0 0);
+      }
+      
+      header .search-bar-container.active {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      /* Search input styling */
+      
+      header .search-bar-container #search-bar {
+          width: 100%;
+          padding: 1rem;
+          text-transform: none;
+          color: #333;
+          font-size: 1.7rem;
+          border-radius: .5rem;
+      }
+      /* Search icon label styling */
+      
+      header .search-bar-container label {
+          color: #fff;
+          cursor: pointer;
+          font-size: 3rem;
+          margin-left: 1.5rem;
+      }
+      
+      header .search-bar-container label:hover {
+          color: var(--orange);
+      }
+      /* Login form container: initially hidden off-screen with a smooth slide-in animation */
+      
+      .login-form-container {
+          position: fixed;
+          top: -120%;
+          left: 0;
+          min-height: 100vh;
+          width: 100vw;
+          background: rgba(0, 0, 0, 0.7);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: top 0.5s ease;
+      }
+      /* Active state for login form: slides it down to the viewport */
+      
+      .login-form-container.active {
+          top: 0;
+      }
+      /* Styling the form within the login form container */
+      
+      .login-form-container form {
+          margin: 2rem;
+          padding: 1.5rem 2rem;
+          border-radius: .5rem;
+          background: #fff;
+          width: 50rem;
+      }
+      /* Form title styling */
+      
+      .login-form-container form h3 {
+          font-size: 3rem;
+          color: #444;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 1rem;
+      }
+      /* Input fields styling within the login form */
+      
+      .login-form-container form .box {
+          width: 100%;
+          padding: 1rem;
+          font-size: 1.7rem;
+          color: #333;
+          margin: .6rem;
+          border: .1rem solid rgba(0, 0, 0, .3);
+          text-transform: none;
+      }
+      /* Focused state for input fields */
+      
+      .login-form-container form .box:focus {
+          border-color: var(--orange);
+      }
+      /* Checkbox and label styling within the login form */
+      
+      .login-form-container form #remember {
+          margin: 2rem 0;
+      }
+      
+      .login-form-container form label {
+          font-size: 1.5rem;
+      }
+      /* Button styling within the login form */
+      
+      .login-form-container form .btn {
+          display: block;
+          width: 100%;
+      }
+      /* Paragraph and link styling within the login form */
+      
+      .login-form-container form p {
+          padding: .5rem 0;
+          font-size: 1.5rem;
+          color: #666;
+      }
+      
+      .login-form-container form p a {
+          color: var(--orange);
+      }
+      
+      .login-form-container form p a:hover {
+          color: #333;
+          text-decoration: underline;
+      }
+      /* Close button for the login form */
+      
+      .login-form-container #form-close {
+          position: absolute;
+          top: 2rem;
+          right: 3rem;
+          font-size: 5rem;
+          color: #fff;
+          cursor: pointer;
+      }
+      /* Menu bar icon for smaller screens */
+      
+      #menu-bar {
+          color: #fff;
+          border: .1rem solid #fff;
+          border-radius: .5rem;
+          font-size: 3rem;
+          padding: .5rem 1.2rem;
+          cursor: pointer;
+          display: none;
+      }
+      /* Container for the home section that fills the viewport height */
+      
+       #home {
+            background-image: url(himg/train.jpg);
+          min-height: 100vh;
+          /* Ensures it takes up the full viewport height */
+          display: flex;
+          /* Enables flexbox layout */
+          align-items: center;
+          /* Vertically centers content */
+          justify-content: center;
+          /* Horizontally centers content */
+          flex-flow: column;
+          /* Aligns children in a column layout */
+          position: relative;
+          /* Allows child elements to use absolute positioning */
+          z-index: 0;
+          /* Ensures this section has the correct stacking order */
+      }
+      /* Centers text in the home section */
+      
+      .home .content {
+          text-align: center;
+          /* Centers the text within the .content container */
+      }
+      /* Styles for h3 elements inside the .content class within the .home section */
+      
+      .home .content h3 {
+          font-size: 4.5rem;
+          /* Sets a large font size for the heading */
+          color: #fff;
+          /* White text color */
+          text-transform: uppercase;
+          /* Makes the text uppercase */
+          text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+          /* Adds a soft shadow to the text */
+      }
+      
+      .home .content p {
+          font-size: 2.5rem;
+          /* Sets the font size for paragraphs inside the .content class in the .home section */
+          color: #fff;
+          /* Sets the text color to white */
+          padding: 0.5rem 0;
+          /* Adds vertical padding (top and bottom) of 0.5rem */
+      }
+      /* Large body height for demonstration purposes */
+      
+      body {
+          height: 300rem;
+      }
+      
+    
+      /* Controls for the video buttons */
+      
+      .home.controls {
+          padding: 1rem;
+          border-radius: 5rem;       
+          background: rgba(0, 0, 0, .7);
+          position: relative;
+          top: 10rem;
+          
+      }
+     
+      .home .controls .img-btn {
+
+          height: 2rem;         
+          width: 2rem;         
+          display: inline-block;        
+          border-radius: 50%;         
+          background: #fff;         
+          cursor: pointer;
+          margin: 0 .5rem;
+          
+      }
+      .home .controls .img-btn.active {
+          background: var(--orange);
+          
+      }
+
+      .welcome {
+        background-color: #f3cf8e; /* Light background */
+        border: 1px solid #dee2e6; /* Border around the section */
+        border-radius: 8px; /* Rounded corners */
+        padding: 20px; /* Padding inside the section */
+        margin: 20px auto; /* Center the section */
+        max-width: 600px; /* Maximum width */
+        text-align: center; /* Center text */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        font-family: 'Playwrite Deutschland Grundschrift', sans-serif; /* Apply the Roboto font */
+    }
+    
+    .welcome h2 {
+        color: #412b03; /* Primary color for heading */
+        margin-bottom: 15px; /* Space below the heading */
+    }
+    
+    .welcome p {
+        color: #333; /* Dark gray for text */
+        line-height: 1.6; /* Improved line spacing */
+        margin-bottom: 10px; /* Space below paragraphs */
+    }
+    
+      
+      .book .row {
+          display: flex;
+          
+          flex-wrap: wrap;         
+          gap: 1.4rem;         
+          align-items: center;
+          
+      }
+          
+      .book .row .image {
+          flex: 1 1 40rem;
+          /* Flex-grow and flex-shrink, with a base width of 40rem */
+      }
+      /* Book Section: Making the image responsive */
+      
+      .book .row .image img {
+          width: 100%;
+          /* Ensuring the image takes full width of its container */
+      }
+      /* Book Section: Styling the form inside the row */
+      
+      .book .row form {
+          flex: 1 1 40rem;
+          /* Flex-grow and flex-shrink, with a base width of 40rem */
+          padding: 2rem;
+          /* Adding padding inside the form */
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+          /* Adding shadow for a card-like look */
+          border-radius: .5rem;
+          /* Rounded corners */
+      }
+      /* Book Section: Styling the input fields in the form */
+      
+      .book .row form .inputBox {
+          padding: .5rem 0;
+          /* Spacing between input fields */
+      }
+      /* Book Section: Styling the actual input fields */
+      
+      .book .row form .inputBox input {
+          width: 100%;
+          /* Full width input */
+          padding: 1rem;
+          /* Padding inside the input field */
+          border: .1rem solid rgba(0, 0, 0, .1);
+          /* Light border around the input */
+          font-size: 1.7rem;
+          /* Font size for input text */
+          color: #333;
+          /* Dark grey color for text */
+          text-transform: none;
+          /* No text transformation (normal text) */
+      }
+      /* Book Section: Styling the labels or titles of input fields */
+      
+      .book .row form .inputBox h3 {
+          font-size: 2rem;
+          /* Font size for the label */
+          padding: 1rem 0;
+          /* Spacing around the label */
+          color: #666;
+          /* Light grey color for the label */
+      }
+      /* Packages Section: Flexbox container for package boxes */
+      
+      .packages .box-container {
+          display: flex;
+          /* Display boxes in a row using flexbox */
+          flex-wrap: wrap;
+          /* Allow boxes to wrap to the next line if there's no space */
+          gap: 2rem;
+          /* Space between boxes */
+      }
+      /* Packages Section: Each individual package box styling */
+      
+      .packages .box-container .box {
+          flex: 1 1 30rem;
+          /* Flex-grow and flex-shrink, with a base width of 30rem */
+          border-radius: .5rem;
+          /* Rounded corners */
+          overflow: hidden;
+          /* Hide any overflowing content */
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+          /* Subtle shadow for a card-like appearance */
+      }
+      /* Packages Section: Styling for the image inside each package box */
+      
+      .packages .box-container .box img {
+          height: 25rem;
+          /* Fixed height for the images */
+          width: 100%;
+          /* Images should take the full width of the container */
+          object-fit: cover;
+          /* Maintain aspect ratio and crop overflow */
+      }
+      /* Packages Section: Content within each package box */
+      
+      .packages .box-container .box .content {
+          padding: 2rem;
+          /* Padding inside the content section */
+      }
+      /* Packages Section: Styling the headings (city names) in each box */
+      
+      .packages .box-container .box .content h3 {
+          font-size: 2rem;
+          /* Font size for the city names */
+          color: #333;
+          /* Dark grey color for the text */
+      }
+      /* Packages Section: Styling the location icon inside the heading */
+      
+      .packages .box-container .box .content h3 i {
+          color: var(--orange);
+          /* Orange color for the location icon */
+      }
+      /* Packages Section: Styling the description text in each box */
+      
+      .packages .box-container .box .content p {
+          font-size: 1.7rem;
+          /* Font size for the description */
+          color: #666;
+          /* Light grey color for the text */
+          padding: 1rem 0;
+          /* Spacing around the description */
+      }
+      /* Packages Section: Styling the stars for ratings in each box */
+      
+      .packages .box-container .box .content .stars i {
+          font-size: 1.7rem;
+          /* Font size for the stars */
+          color: var(--orange);
+          /* Orange color for the filled stars */
+      }
+      /* Packages Section: Styling the price section in each box */
+      
+      .packages .box-container .box .content .price {
+          font-size: 2rem;
+          /* Font size for the price */
+          color: #333;
+          /* Dark grey color for the price */
+          padding-top: 1rem;
+          /* Spacing above the price */
+      }
+      /* Packages Section: Styling the discounted price (strikethrough) */
+      
+      .packages .box-container .box .content .price span {
+          color: #666;
+          /* Light grey color for the old price */
+          font-size: 1.5rem;
+          /* Smaller font size for the old price */
+          text-decoration: line-through;
+          /* Strikethrough to indicate discount */
+      }
+      /* Container for the service boxes */
+      
+      .services .box-container {
+          /* Use Flexbox for alignment and layout */
+          display: flex;
+          /* Allow wrapping to new lines if there are too many boxes in a row */
+          flex-wrap: wrap;
+          /* Set a gap of 1.5rem between the boxes */
+          gap: 1.5rem;
+      }
+      /* Individual service box styling */
+      /* Services Section - General Layout */
+      
+      .services .box-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          /* Distributes the boxes evenly */
+          gap: 2rem;
+          /* More gap between boxes for better spacing */
+      }
+      /* Individual service box styling */
+      
+      .services .box-container .box {
+          flex: 1 1 30rem;
+          /* Each box takes up to 30rem of width */
+          border-radius: .5rem;
+          /* Slight rounding on the corners */
+          padding: 2rem;
+          /* Adds more padding for a cleaner look */
+          text-align: center;
+          /* Center the content */
+      }
+      /* Icon Styling */
+      
+      .services .box-container .box i {
+          font-size: 5rem;
+          /* Large icon size */
+          padding: 1rem;
+          /* Adds space around the icon */
+          color: var(--orange);
+          /* Matches the orange/yellow color in the image */
+      }
+      /* Service Heading Text Styling */
+      
+      .services .box-container .box h3 {
+          font-size: 2.5rem;
+          /* Larger heading size for visibility */
+          color: #333;
+          /* Darker color for the heading */
+          margin: 1rem 0;
+          /* Adds space around the heading */
+      }
+      /* Paragraph Text */
+      
+      .services .box-container .box p {
+          font-size: 1.5rem;
+          /* Slightly smaller font size */
+          color: #666;
+          /* Softer color for the text */
+          padding: 1rem 0;
+      }
+      /* Styling for the 'SERVICES' heading with each letter in a box */
+      
+      .heading {
+          display: flex;
+          justify-content: center;
+          font-size: 4rem;
+          text-transform: uppercase;
+      }
+      
+      .heading span {
+          display: inline-block;
+          background-color: rgba(255, 152, 0, 0.1);
+          /* Light orange background */
+          padding: 1rem;
+          margin: 0 0.5rem;
+          color: #FF9800;
+          /* Orange color for the letters */
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+      }
+      
+      .heading span:hover {
+          background-color: #FF9800;
+          /* Changes background to full orange on hover */
+          color: white;
+      }
+      /* Add a hover effect to the service boxes */
+      
+      .services .box-container .box:hover {
+          /* Adds a subtle shadow effect when the box is hovered */
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          /* Added second value to fix syntax */
+      }
+      /* Styling for the gallery box container */
+      /* Gallery container */
+      
+      .gallery .box-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          /* Adjusts space between boxes */
+          justify-content: center;
+          /* Centers boxes horizontally */
+      }
+      /* Individual gallery box styling */
+      
+      .gallery .box-container .box {
+          overflow: hidden;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          border: 0.5rem solid #fff;
+          /* Slightly smaller border */
+          border-radius: .5rem;
+          flex: 1 1 30rem;
+          /* Sets a default width of 30rem */
+          height: 25rem;
+          position: relative;
+          transition: transform 0.3s ease;
+          /* Adds a smooth scale effect on hover */
+      }
+      /* Hover effect to scale the box */
+      
+      .gallery .box-container .box:hover {
+          transform: scale(1.05);
+          /* Slight zoom on hover */
+      }
+      /* Image styling */
+      
+      .gallery .box-container .box img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          /* Ensures the image covers the box without distortion */
+      }
+      /* Content inside the gallery box */
+      
+      .gallery .box-container .box .content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          /* Centers the text vertically */
+          align-items: center;
+          /* Centers the text horizontally */
+          background: rgba(0, 0, 0, 0.6);
+          /* Slightly lighter background overlay */
+          text-align: center;
+          opacity: 0;
+          /* Initially hides the content */
+          transition: opacity 0.3s ease-in-out;
+          /* Smooth fade-in effect */
+      }
+      /* Hover effect to show the content */
+      
+      .gallery .box-container .box:hover .content {
+          opacity: 1;
+          /* Makes content visible on hover */
+      }
+      /* Title (h3) styling inside the content */
+      
+      .gallery .box-container .box .content h3 {
+          font-size: 2rem;
+          /* Adjust font size */
+          color: var(--orange);
+          /* Orange color */
+          margin-bottom: 1rem;
+          /* Adds space below the title */
+      }
+      /* Paragraph (p) styling inside the content */
+      
+      .gallery .box-container .box .content p {
+          font-size: 1.2rem;
+          /* Slightly smaller font */
+          color: #eee;
+          /* Light gray color for better readability */
+          margin-bottom: 1.5rem;
+          /* Adds space between text and button */
+      }
+      /* Button styling inside the content */
+      
+      .gallery .box-container .box .content .btn {
+          background-color: var(--orange);
+          /* Orange button */
+          color: #fff;
+          /* White text */
+          padding: 0.75rem 1.5rem;
+          /* Adds padding to the button */
+          font-size: 1rem;
+          /* Font size for the button */
+          border-radius: 0.5rem;
+          /* Rounds the button corners */
+          text-transform: uppercase;
+          /* Capitalizes button text */
+          cursor: pointer;
+          /* Shows pointer cursor on hover */
+          text-decoration: none;
+          /* Removes underline from button */
+          transition: background-color 0.3s ease;
+          /* Smooth hover transition */
+      }
+      /* Button hover effect */
+      
+      .gallery .box-container .box .content .btn:hover {
+          background: rgba(0, 0, 0, .1);
+          /* Slightly darker orange on hover */
+      }
+      /* Review Section Slider */
+      
+      .review .review-slider {
+          padding-bottom: 2rem;
+          /* Adds padding at the bottom of the slider */
+      }
+      
+      .review .box {
+          padding: 2rem;
+          /* Padding inside each review box */
+          text-align: center;
+          /* Centers the text inside the box */
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+          /* Adds a shadow effect */
+          border-radius: .5rem;
+          /* Rounds the corners of the review box */
+      }
+      
+      .review .box img {
+          height: 13rem;
+          width: 13rem;
+          border-radius: 50%;
+          /* Makes the image circular */
+          object-fit: cover;
+          /* Ensures the image covers the space properly without distortion */
+          margin-bottom: 1rem;
+          /* Space below the image */
+      }
+      
+      .review .box h3 {
+          color: #333;
+          /* Dark gray color for heading */
+          font-size: 2.5rem;
+          /* Font size for the name */
+      }
+      
+      .review .box p {
+          color: #666;
+          /* Medium gray color for text */
+          font-size: 1.5rem;
+          /* Font size for paragraph */
+          padding: 1rem 0;
+          /* Adds padding at the top and bottom of the paragraph */
+      }
+      
+      .review .box .stars i {
+          color: var(--orange);
+          /* Use the orange color from your CSS variables for the stars */
+          font-size: 1.7rem;
+          /* Font size for the star icons */
+      }
+      /* Contact Section */
+      
+      .contact .row {
+          display: flex;
+          /* Flexbox layout */
+          flex-wrap: wrap;
+          /* Allows items to wrap onto multiple lines if necessary */
+          gap: 1.5rem;
+          /* Space between flex items */
+          align-items: center;
+          /* Aligns items vertically at the center */
+      }
+      
+      .contact .row .image {
+          flex: 1 1 35rem;
+          /* Flex-grow, flex-shrink, and base size for image */
+      }
+      
+      .contact .row .image img {
+          width: 100%;
+          /* Image takes the full width of its container */
+      }
+      
+      .contact .row form {
+          flex: 1 1 50rem;
+          /* Flex-grow, flex-shrink, and base size for the form */
+          padding: 2rem;
+          /* Padding inside the form */
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+          /* Adds a shadow to the form */
+          border-radius: .5rem;
+          /* Rounds the form corners */
+      }
+      
+      .contact .row form .inputBox {
+          display: flex;
+          /* Flex layout for the input boxes */
+          flex-wrap: wrap;
+          /* Allows wrapping */
+          justify-content: space-between;
+          /* Spaces out the input fields evenly */
+      }
+      
+      .contact .row form .inputBox input,
+      .contact .row form textarea {
+          /* Fixed 'from' typo to 'form' */
+          width: 49%;
+          /* Input fields take up almost half the width */
+          margin: 1rem 0;
+          /* Adds vertical margin between input fields */
+          padding: 1rem;
+          /* Padding inside the input fields */
+          font-size: 1.7rem;
+          /* Font size for the input text */
+          color: #333;
+          /* Dark gray color for input text */
+          background: #f7f7f7;
+          /* Light gray background for input fields */
+          text-transform: none;
+          /* Ensures the input text is not capitalized */
+      }
+      
+      .contact .row form textarea {
+          height: 15rem;
+          /* Fixed height for the textarea */
+          resize: none;
+          /* Disables resizing for the textarea */
+          width: 100%;
+          /* Textarea takes full width */
+      }
+      /* .brand-container {
+          text-align: center;
+      }*/
+      
+      .footer {
+          background: #333;
+      }
+      
+      .footer .box-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+      }
+      
+      .footer .box-container .box {
+          padding: 1rem 0;
+          flex: 1 1 25rem;
+      }
+      
+      .footer .box-container .box h3 {
+          font-size: 2.5rem;
+          padding: .7rem 0;
+          color: #fff;
+      }
+      
+      .footer .box-container .box p {
+          font-size: 1.5rem;
+          padding: .7rem 0;
+          color: #eee;
+      }
+      
+      .footer .box-container .box a {
+          display: block;
+          font-size: 1.5rem;
+          padding: .7rem 0;
+          color: #eee;
+      }
+      
+      .footer .box-container .box a:hover {
+          color: var(--orange);
+          text-decoration: underline;
+      }
+      
+      .footer .credit {
+          text-align: center;
+          padding: 2rem 1rem;
+          margin-top: 1rem;
+          font-size: 2rem;
+          font-weight: normal;
+          color: #fff;
+          border-top: .1rem solid rgba(255, 255, 255, .2);
+      }
+      /* Media queries for responsiveness */
+      /* Adjust font size for screens smaller than 1200px */
+      
+      @media (max-width: 1200px) {
+          html {
+              font-size: 55%;
+          }
+      }
+      /* Header padding adjustment for screens smaller than 991px */
+      
+      @media (max-width: 991px) {
+          /* When the screen width is 991px or less */
+          header {
+              padding: 2rem;
+              /* Reduces the padding for the header on smaller screens */
+          }
+          section {
+              padding: 2rem;
+              /* Reduces the padding for all section elements on smaller screens */
+          }
+      }
+      /* Display menu bar icon for screens smaller than 768px */
+      
+      @media (max-width: 768px) {
+          #menu-bar {
+              display: initial;
+          }
+          /* Navbar changes to a dropdown for smaller screens */
+          header .navbar {
+              position: absolute;
+              top: 100%;
+              right: 0;
+              left: 0;
+              background: #333;
+              border-top: .1rem solid rgba(255, 255, 255, .2);
+              padding: 1rem 2rem;
+              height: 0;
+              overflow: hidden;
+              transition: height 0.3s ease;
+              /* Smooth transition */
+          }
+          /* When the navbar is active (expanded) */
+          header .navbar.active {
+              height: auto;
+              /* Allow full height for all menu items */
+          }
+          /* Navbar links displayed as blocks for mobile screens */
+          header .navbar a {
+              display: block;
+              border-radius: .5rem;
+              padding: 1.5rem;
+              margin: 1.5rem 0;
+              background: #222;
+          }
+      }
+      /* Adjust font size for screens smaller than 450px */
+      
+      @media (max-width: 450px) {
+          html {
+              font-size: 50%;
+          }
+      }
+      
+      @media (max-width: 450px) {
+          /* Reducing the root font size for smaller screens */
+          html {
+              font-size: 50%;
+              /* Scaling down the font size */
+          }
+          /* Adjusting the size of the heading text on small screens */
+          .heading span {
+              font-size: 2.5rem;
+              /* Smaller font size for headings */
+          }
+          .contact .row from .inputBox input {
+              width: 100%;
+          }
+      }
+
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: space-around; /* Spacing between boxes */
+        padding: 20px;
+        background-color: #806030;
+    }
+    
+    .stat {
+        background-color: #ec9430;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 45%; /* 45% width to allow two boxes in one row with space between them */
+        height: 200px; /* Fixed height to make boxes square */
+        margin-bottom: 20px; /* Adds spacing between rows */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat h4 {
+        margin-bottom: 10px;
+        font-size: 30px;
+        color: #ffffff;
+    }
+    
+    .stat p {
+        font-size: 20px;
+        color: #ffffff;
+    }
+    
+    .stat:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s;
+    }
+    

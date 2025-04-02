@@ -1,0 +1,26 @@
+/* Container for the home section that fills the viewport height */
+      
+#home {
+    background-image: url(../image/train.jpg);
+  min-height: 100vh;
+  /* Ensures it takes up the full viewport height */
+  display: flex;
+  /* Enables flexbox layout */
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: center;
+  /* Horizontally centers content */
+  flex-flow: column;
+  /* Aligns children in a column layout */
+  position: relative;
+  /* Allows child elements to use absolute positioning */
+  z-index: 0;
+  /* Ensures this section has the correct stacking order */
+}
+
+/* Centers text in the home section */
+      
+.home .content {
+    text-align: center;
+    /* Centers the text within the .content container */
+}

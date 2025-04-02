@@ -1,0 +1,49 @@
+
+
+/* Container for the home section that fills the viewport height */
+      
+#home {
+    
+    background-size: cover;
+  min-height: 100vh;
+  /* Ensures it takes up the full viewport height */
+  display: flex;
+  /* Enables flexbox layout */
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: center;
+  /* Horizontally centers content */
+  flex-flow: column;
+  /* Aligns children in a column layout */
+  position: relative;
+  /* Allows child elements to use absolute positioning */
+  z-index: 0;
+  /* Ensures this section has the correct stacking order */
+}
+
+/* Centers text in the home section */
+      
+.home .content {
+    text-align: center;
+    /* Centers the text within the .content container */
+}
+
+.home .content h3 {
+    font-size: 4.5rem;
+    /* Sets a large font size for the heading */
+    color: #fff;
+    /* White text color */
+    text-transform: uppercase;
+    /* Makes the text uppercase */
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+    /* Adds a soft shadow to the text */
+}
+
+.home .content p {
+    font-size: 2.5rem;
+    /* Sets the font size for paragraphs inside the .content class in the .home section */
+    color: #fff;
+    /* Sets the text color to white */
+    padding: 0.5rem 0;
+    /* Adds vertical padding (top and bottom) of 0.5rem */
+}
